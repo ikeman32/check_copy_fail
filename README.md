@@ -4,6 +4,22 @@
 - copy_fail_unminimized_with_comments.py: My attempt to understand the exploit
 - mk_vulnerable.sh: a helper script to make a system vulnerable to the exploit for testing the checker script.
 
+**Download only the check_copy_fail.py**
+```
+curl -L -O https://raw.githubusercontent.com/ikeman32/check_copy_fail/refs/heads/main/check_copy_fail.py
+
+wget https://raw.githubusercontent.com/ikeman32/check_copy_fail/refs/heads/main/check_copy_fail.py
+
+Manually run the script
+python3 check_copy_fail.py
+```
+**Get and automatically run the script**
+```
+curl -s -L https://raw.githubusercontent.com/ikeman32/check_copy_fail/refs/heads/main/check_copy_fail.py | python3
+
+wget -q -O - https://raw.githubusercontent.com/ikeman32/check_copy_fail/refs/heads/main/check_copy_fail.py | python3
+```
+
 ## About
 This small project was inspired by a video I watched on YouTube from a channel called You Suck at Programming. Which is fitting because I really do suck at programming.
 [

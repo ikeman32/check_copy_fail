@@ -3,6 +3,30 @@
 - copy_fail_minimized.py: The exploit for CVE-2026-31431 as written [copy_fail](https://copy.fail/)
 - copy_fail_unminimized_with_comments.py: My attempt to understand the exploit
 - mk_vulnerable.sh: a helper script to make a system vulnerable to the exploit for testing the checker script.
+- disable_dirty_frag.sh
+
+## Dirty Frag
+A new vulnerability with no patch similar to Copy Fail has been found. The disclosure and embargo has been broken and out in the wild. The temporary solution is basically the same as Copy Fail to disable the kernel model.
+Discovered by Korean Security researcher V4bel. See github[DirtyFrag](https://github.com/V4bel/dirtyfrag)
+
+```
+https://github.com/V4bel/dirtyfrag
+```
+
+```
+sudo sh -c "printf 'install esp4 /bin/false\ninstall esp6 /bin/false\ninstall rxrpc /bin/false\n' > /etc/modprobe.d/dirtyfrag.conf; rmmod esp4 esp6 rxrpc 2>/dev/null; true"
+```
+
+**Download**
+```
+curl -L -O https://raw.githubusercontent.com/ikeman32/check_copy_fail/refs/heads/main/diable_dirty_frag.sh
+```
+
+**Get and automatically run the script**
+```
+curl -s -L https://raw.githubusercontent.com/ikeman32/check_copy_fail/refs/heads/main/diable_dirty_frag.sh | bash
+```
+
 
 **Download only the check_copy_fail.py**
 ```
